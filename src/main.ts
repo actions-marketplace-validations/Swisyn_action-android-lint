@@ -86,7 +86,7 @@ async function run(): Promise<void> {
         let xml = '\n<?xml version="1.0" encoding="utf-8"?>'
         xml += '\n<checkstyle version="8.0">'
 
-        const issuesCount = result['issues']['issue'].length
+        const issuesCount = result['issues']['issue'] ? result['issues']['issue'].length : 0
 
         core.info(`Retrieved ${issuesCount} issues to process.`)
 
