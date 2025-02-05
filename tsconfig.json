@@ -1,44 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */
-    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
-    "outDir": "./lib",                        /* Redirect output structure to the directory. */
-    "rootDir": "./src",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
-    "strict": true,                           /* Enable all strict type-checking options. */
-    "noImplicitAny": true,                    /* Raise error on expressions and declarations with an implied 'any' type. */
-    "esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "lib": ["es2017", "dom"],
+    "typeRoots": ["./node_modules/@types"] 
   },
   "exclude": ["node_modules", "**/*.test.ts"]
-}
-{
-  "name": "typescript-action",
-  "version": "0.0.0",
-  "private": true,
-  "description": "TypeScript template action",
-  "main": "lib/main.js",
-  "scripts": {
-    "build": "tsc",
-    "package": "ncc build --source-map --license licenses.txt"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
-  },
-  "keywords": [
-    "actions",
-    "node",
-    "setup"
-  ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "@actions/core": "^1.10.0",
-    "xml2js": "^0.4.23"
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/xml2js": "^0.4.11",
-    "@vercel/ncc": "^0.31.1",
-    "typescript": "^4.4.4"
-  }
 }
