@@ -10,3 +10,35 @@
   },
   "exclude": ["node_modules", "**/*.test.ts"]
 }
+{
+  "name": "typescript-action",
+  "version": "0.0.0",
+  "private": true,
+  "description": "TypeScript template action",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "package": "ncc build --source-map --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actions/typescript-action.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/xml2js": "^0.4.11",
+    "@vercel/ncc": "^0.31.1",
+    "typescript": "^4.4.4"
+  }
+}
