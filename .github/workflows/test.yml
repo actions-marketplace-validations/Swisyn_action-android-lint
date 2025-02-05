@@ -1,5 +1,5 @@
 name: 'build-test'
-on: # rebuild any PRs and main branch changes
+on: 
   pull_request:
   workflow_dispatch:
   push:
@@ -8,7 +8,7 @@ on: # rebuild any PRs and main branch changes
       - 'releases/*'
 
 jobs:
-  build: # make sure build/ci work properly
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,7 +16,7 @@ jobs:
           npm install
       - run: |
           npm run all
-  test: # make sure the action works on a clean machine without building
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,6 +26,12 @@ jobs:
           ls
         shell: bash
 
-      - uses: ./
+      - name: Check report
+        uses: ./
         with:
           lint_xml_file: 'lint-results-release.xml'
+
+      - name: Check empty report
+        uses: ./
+        with:
+          lint_xml_file: 'lint-results-release-empty.xml'
